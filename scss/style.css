@@ -16,8 +16,23 @@ body {
 }
 
 a, a:visited, a:hover {
+  cursor: pointer;
   text-decoration: none;
   color: white;
+}
+
+a::after {
+  content: "";
+  display: block;
+  margin: 0.625rem auto;
+  background: white;
+  height: 2px;
+  width: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover::after {
+  width: 40%;
 }
 
 .flex {
@@ -38,9 +53,28 @@ h1 {
   font-family: "Josefin Sans", sans-serif;
   font-size: 4.5rem;
   font-weight: 300;
-  line-height: 70px;
+  line-height: 4.375rem;
   text-transform: uppercase;
   padding-left: 2.5rem;
+}
+@media (max-width: 51.2em) {
+  h1 {
+    font-size: 2.5rem;
+    line-height: 2.375rem;
+    padding: 0.813rem;
+  }
+}
+
+@media (max-width: 51.2em) {
+  .hide-for-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 51.21em) {
+  .hide-for-desktop {
+    display: none;
+  }
 }
 
 .hero {
@@ -57,18 +91,39 @@ h1 {
   margin: auto;
   padding-top: 4rem;
 }
+@media (max-width: 51.2em) {
+  .hero .header .navbar {
+    width: 87.2%;
+  }
+}
 .hero .header .navbar .header__links {
   width: 23.75rem;
   height: 1.563rem;
+  margin-top: 0.5rem;
+}
+.hero .header .navbar .hamburger {
   margin-top: 0.5rem;
 }
 .hero .wrapper {
   width: 77.08%;
   margin: 10rem auto 0;
 }
+@media (max-width: 51.2em) {
+  .hero .wrapper {
+    width: 87.2%;
+  }
+}
 .hero .main-title {
   border: 2px solid white;
   max-width: 40.625rem;
+}
+@media (max-width: 51.2em) {
+  .hero .main-title {
+    font-size: 2.5rem;
+    line-height: 2.375rem;
+    padding: 0.813rem;
+    text-align: left;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

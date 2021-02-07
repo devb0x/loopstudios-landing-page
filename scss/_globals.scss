@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixins";
 
 html {
   font-size: 100%;
@@ -17,9 +18,25 @@ body {
   font-weight: 400;
 }
 
+// Links
 a, a:visited, a:hover {
+  cursor: pointer;
   text-decoration: none;
   color: $white;
+}
+
+a::after {
+  content: '';
+  display: block;
+  margin: 0.625rem auto;
+  background: white;
+  height: 2px;
+  width: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover::after {
+  width: 40%;
 }
 
 // Flexbox
@@ -40,14 +57,31 @@ a, a:visited, a:hover {
 }
 
 //
-
 h1 {
   color: $white;
   font-family: $josefin;
   font-size: 4.5rem;
   font-weight: 300;
-  line-height: 70px;
+  line-height: 4.375rem;
   text-transform: uppercase;
   padding-left: 2.5rem;
+
+  @include breakpoint-down(medium){
+    font-size: 2.5rem;
+    line-height: 2.375rem;
+    padding: 0.813rem;
+  }
 }
 
+// Visibility
+.hide-for-mobile {
+  @include breakpoint-down(medium){
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  @include breakpoint-up(medium){
+    display: none;
+  }
+}

@@ -1,4 +1,5 @@
 @import "variables";
+@import 'mixins';
 
 .hero {
   height: 40.625rem;
@@ -16,9 +17,17 @@
       margin: auto;
       padding-top: 4rem;
 
+      @include breakpoint-down(medium){
+        width: 87.2%;
+      }
+
       .header__links {
         width: 23.75rem;
         height: 1.563rem;
+        margin-top: 0.5rem;
+      }
+
+      .hamburger {
         margin-top: 0.5rem;
       }
     }
@@ -28,11 +37,22 @@
   .wrapper {
     width: 77.08%;
     margin: 10rem auto 0;
+
+    @include breakpoint-down(medium){
+      width: 87.2%;
+    }
   }
 
   .main-title {
     border: 2px solid $white;
     max-width: 40.625rem;
+
+    @include breakpoint-down(medium){
+      font-size: 2.5rem;
+      line-height: 2.375rem;
+      padding: 0.813rem;
+      text-align: left;
+    }
   }
 
 }
