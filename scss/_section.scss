@@ -2,26 +2,26 @@
 @import "mixins";
 
 .section {
-  margin-top: 160px;
+  margin-top: 10rem;
   height: 100vh;
 
-  @include breakpoint-down(medium) {
+  @include breakpoint-down(large) {
     height: 100vh;
     text-align: center;
     display: flex;
     flex-direction: column;
-    margin: auto;
+    margin: 3rem auto;
     vertical-align: center;
   }
 
   .wrapper {
     width: 77.15%;
-    height: 500px;
+    height: 31.25rem;
     position: relative;
     display: flex;
     margin: auto;
 
-    @include breakpoint-down(medium){
+    @include breakpoint-down(large){
       width: 87.2%;
       display: flex;
       flex-direction: column;
@@ -36,26 +36,26 @@
           width: 48%;
           right: 0;
           bottom: 0;
-          padding-left: 96px;
-          padding-top: 96px;
+          padding-left: 8%;
+          padding-top: 8%;
         }
 
         @include breakpoint-down(medium){
           position: unset;
           width: 85%;
-          margin: 48px auto;
+          margin: 3rem auto;
         }
 
         h2 {
-          font-size: 48px;
+          font-size: 3rem;
           font-family: $josefin;
           text-transform: uppercase;
           margin-top: 0;
 
-          @include breakpoint-down(medium){
+          @include breakpoint-down(large){
             margin-top: 0;
             font-family: $josefin;
-            font-size: 32px;
+            font-size: 2rem;
             text-transform: uppercase;
           }
         }
@@ -65,30 +65,28 @@
           line-height: 1.6rem;
           margin-bottom: 0;
         }
-      }
+      } // end .wrapperText
     }
 
   .img {
-
     background-image: url("./../images/desktop/image-interactive.jpg");
     background-size: contain;
     background-repeat: no-repeat;
-    height: 500px;
+    height: 31.25rem;
 
     @include breakpoint-up(medium){
       position: absolute;
-      top: 0;
+      bottom: 2px;
       left: 0;
-      width: 731px;
+      width: 45.688rem;
     }
 
-    @include breakpoint-down(medium) {
-
+    @include breakpoint-down(large) {
       background-image: url("./../images/mobile/image-interactive.jpg");
       background-size: contain;
       background-repeat: no-repeat;
-      min-height: 224px;
-      min-width: 327px;
+      min-height: 14rem;
+      min-width: 20.32rem;
       margin: auto
     }
   }
