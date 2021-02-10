@@ -20,9 +20,9 @@
     "img"
     "btn";
   text-align: center;
+  justify-content: center;
 
   @include breakpoint-up(landscape) {
-    margin-top: 150px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr repeat(4, 3fr);
     gap: 24px 24px;
@@ -33,7 +33,8 @@
   }
 
   @include breakpoint-up(large){
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 250px 250px 250px 250px;
+    //grid-template-columns: 798px 250px;
     grid-template-rows:  1fr repeat(2, 3fr);
     grid-template-areas:
       "title title title btn"
@@ -43,17 +44,28 @@
 
   &-title {
     grid-area: title;
+    align-self: center;
 
     @include breakpoint-up(landscape){
       grid-area: title;
+      justify-self: center;
     }
     @include breakpoint-up(large){
       grid-area: title;
+      justify-self: self-start;
     }
   }
 
   &-btn {
     grid-area: btn;
+    align-self: center;
+    display: grid;
+
+    @include breakpoint-up(large){
+      justify-self: self-end;
+    }
+
+
 
     > button {
       cursor: pointer;
@@ -91,6 +103,11 @@ h3 {
     height: 120px;
     width: 100%;
     margin: auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    //margin: 0;
 
     @include breakpoint-up(medium){
       //height: 450px;
@@ -98,10 +115,13 @@ h3 {
     }
 
     @include breakpoint-up(landscape){
-
+      height: 450px;
+      width: 256px;
+      background-size: contain;
+      background-position: top;
     }
     @include breakpoint-up(large){
-      border: 1px solid red;
+      //border: 1px solid red;
     }
 
   }
@@ -136,11 +156,67 @@ h3 {
 
 }
 
-.feature__img:nth-child(1){
+// Images for items
+#item1 {
   background-image: url("./../images/mobile/image-deep-earth.jpg");
-  //height: 100%;
+
+  @include breakpoint-up(landscape){
+    background-image: url("./../images/desktop/image-deep-earth.jpg");
+  }
 }
 
-.features__img:nth-child(2){
+#item2 {
   background-image: url("./../images/mobile/image-night-arcade.jpg");
+
+  @include breakpoint-up(landscape){
+    background-image: url("./../images/desktop/image-night-arcade.jpg");
+  }
+}
+
+#item3 {
+  background-image: url("./../images/mobile/image-soccer-team.jpg");
+
+  @include breakpoint-up(landscape){
+    background-image: url("./../images/desktop/image-soccer-team.jpg");
+  }
+}
+
+#item4 {
+  background-image: url("./../images/mobile/image-grid.jpg");
+
+  @include breakpoint-up(landscape){
+    background-image: url("./../images/desktop/image-grid.jpg");
+  }
+}
+
+#item5 {
+  background-image: url("./../images/mobile/image-from-above.jpg");
+
+  @include breakpoint-up(landscape){
+    background-image: url("./../images/desktop/image-from-above.jpg");
+  }
+}
+
+#item6 {
+  background-image: url("./../images/mobile/image-pocket-borealis.jpg");
+
+  @include breakpoint-up(landscape){
+    background-image: url("./../images/desktop/image-pocket-borealis.jpg");
+  }
+}
+
+#item7 {
+  background-image: url("./../images/mobile/image-curiosity.jpg");
+
+  @include breakpoint-up(landscape){
+    background-image: url("./../images/desktop/image-curiosity.jpg");
+  }
+}
+
+#item8 {
+  background-image: url("./../images/mobile/image-fisheye.jpg");
+
+  @include breakpoint-up(landscape){
+    background-image: url("./../images/desktop/image-fisheye.jpg");
+  }
 }
