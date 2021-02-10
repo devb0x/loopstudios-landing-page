@@ -1,10 +1,10 @@
 // Breakpoints
 
-// large: 992px
-$breakpoints-up: ("medium": "51.21em", "large": "66.13em");
+// landscape: 666px large: 992px
+$breakpoints-up: ("landscape": "41.625em", "medium": "51.21em", "large": "66.13em");
 
-// large: 993px
-$breakpoints-down: ("medium": "51.2em", "large": "66.2em");
+// landscape: 667px large: 993px
+$breakpoints-down: ("landscape": "41.6875em", "medium": "51.2em", "large": "66.2em");
 
 @mixin breakpoint-up($size) {
   @media (min-width: map-get($breakpoints-up, $size)){
@@ -19,3 +19,4 @@ $breakpoints-down: ("medium": "51.2em", "large": "66.2em");
 }
 
 
+// 667px landscape > grid 2

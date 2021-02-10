@@ -1,0 +1,118 @@
+@import "variables";
+@import "mixins";
+
+.features {
+  width: 87.2%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-row-gap: 24px;
+  grid-template-areas:
+    "title"
+    "img"
+    "img"
+    "img"
+    "img"
+    "img"
+    "img"
+    "img"
+    "img"
+    "btn";
+  text-align: center;
+
+  @include breakpoint-up(medium) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &-title {
+    grid-area: title;
+  }
+
+  &-btn {
+    grid-area: btn;
+  }
+}
+
+h3 {
+  display: grid;
+  grid-area: title;
+  text-transform: uppercase;
+  font-family: $josefin;
+  font-size: 32px;
+  font-weight: 300;
+}
+
+button {
+  display: grid;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid $black;
+  text-transform: uppercase;
+  color: $black;
+  background-color: $white;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  font-family: $alata;
+  margin: 10px auto;
+  padding: 13px 38px;
+
+  @include breakpoint-up(medium){
+
+  }
+}
+
+.feature {
+
+  &__item {
+    height: 120px;
+    width: 100%;
+    margin: auto;
+
+    @include breakpoint-up(medium){
+      height: 450px;
+      width: 256px;
+    }
+  }
+
+  &__img {
+    //border: 1px solid red;
+
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+
+    @include breakpoint-down(medium){
+
+    }
+
+    .feature__title {
+      font-size: 1.5rem;
+      font-family: $josefin;
+      text-transform: uppercase;
+      text-align: left;
+      color: $white;
+      position: absolute;
+      left: 10%;
+      bottom: 5%;
+      max-width: 240px;
+      height: 50%;
+      white-space: pre;
+    }
+
+  }
+
+}
+
+.feature__img:nth-child(1){
+  background-image: url("./../images/mobile/image-deep-earth.jpg");
+  //height: 100%;
+}
+
+.features__img:nth-child(2){
+  background-image: url("./../images/mobile/image-night-arcade.jpg");
+}
