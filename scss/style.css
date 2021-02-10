@@ -265,29 +265,39 @@ h1 {
   grid-template-areas: "title" "img" "img" "img" "img" "img" "img" "img" "img" "btn";
   text-align: center;
 }
-@media (min-width: 51.21em) {
+@media (min-width: 41.625em) {
   .features {
+    margin-top: 150px;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr repeat(4, 3fr);
+    gap: 24px 24px;
+    grid-template-areas: "title btn" "img ." "img .";
+  }
+}
+@media (min-width: 66.13em) {
+  .features {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr repeat(2, 3fr);
+    grid-template-areas: "title title title btn" "img img img img" "img img img img";
   }
 }
 .features-title {
   grid-area: title;
 }
+@media (min-width: 41.625em) {
+  .features-title {
+    grid-area: title;
+  }
+}
+@media (min-width: 66.13em) {
+  .features-title {
+    grid-area: title;
+  }
+}
 .features-btn {
   grid-area: btn;
 }
-
-h3 {
-  display: grid;
-  grid-area: title;
-  text-transform: uppercase;
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 32px;
-  font-weight: 300;
-}
-
-button {
-  display: grid;
+.features-btn > button {
   cursor: pointer;
   outline: none;
   border: 1px solid black;
@@ -301,15 +311,29 @@ button {
   margin: 10px auto;
   padding: 13px 38px;
 }
+@media (min-width: 41.625em) {
+  .features-btn {
+    grid-area: btn;
+  }
+}
+
+h3 {
+  display: grid;
+  grid-area: title;
+  text-transform: uppercase;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+}
+
 .feature__item {
   height: 120px;
   width: 100%;
   margin: auto;
 }
-@media (min-width: 51.21em) {
+@media (min-width: 66.13em) {
   .feature__item {
-    height: 450px;
-    width: 256px;
+    border: 1px solid red;
   }
 }
 .feature__img {

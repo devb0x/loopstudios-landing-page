@@ -21,16 +21,58 @@
     "btn";
   text-align: center;
 
-  @include breakpoint-up(medium) {
+  @include breakpoint-up(landscape) {
+    margin-top: 150px;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr repeat(4, 3fr);
+    gap: 24px 24px;
+    grid-template-areas:
+      "title btn"
+      "img ."
+      "img .";
+  }
+
+  @include breakpoint-up(large){
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows:  1fr repeat(2, 3fr);
+    grid-template-areas:
+      "title title title btn"
+      "img img img img"
+      "img img img img";
   }
 
   &-title {
     grid-area: title;
+
+    @include breakpoint-up(landscape){
+      grid-area: title;
+    }
+    @include breakpoint-up(large){
+      grid-area: title;
+    }
   }
 
   &-btn {
     grid-area: btn;
+
+    > button {
+      cursor: pointer;
+      outline: none;
+      border: 1px solid $black;
+      text-transform: uppercase;
+      color: $black;
+      background-color: $white;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 5px;
+      font-family: $alata;
+      margin: 10px auto;
+      padding: 13px 38px;
+    }
+
+    @include breakpoint-up(landscape){
+      grid-area: btn;
+    }
   }
 }
 
@@ -43,26 +85,6 @@ h3 {
   font-weight: 300;
 }
 
-button {
-  display: grid;
-  cursor: pointer;
-  outline: none;
-  border: 1px solid $black;
-  text-transform: uppercase;
-  color: $black;
-  background-color: $white;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 5px;
-  font-family: $alata;
-  margin: 10px auto;
-  padding: 13px 38px;
-
-  @include breakpoint-up(medium){
-
-  }
-}
-
 .feature {
 
   &__item {
@@ -71,14 +93,20 @@ button {
     margin: auto;
 
     @include breakpoint-up(medium){
-      height: 450px;
-      width: 256px;
+      //height: 450px;
+      //width: 256px;
     }
+
+    @include breakpoint-up(landscape){
+
+    }
+    @include breakpoint-up(large){
+      border: 1px solid red;
+    }
+
   }
 
   &__img {
-    //border: 1px solid red;
-
     height: 100%;
     width: 100%;
     background-size: cover;
