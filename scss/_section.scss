@@ -3,10 +3,9 @@
 
 .section {
   margin-top: 10rem;
-  height: 100vh;
+  height: 70vh;
 
   @include breakpoint-down(large) {
-    height: 100vh;
     text-align: center;
     display: flex;
     flex-direction: column;

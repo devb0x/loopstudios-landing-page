@@ -13,11 +13,11 @@
   @include breakpoint-down(medium){
     background-image: url("./../images/mobile/image-hero.jpg");
     height: 100vh;
-  }
 
-  //@media (orientation: landscape) {
-  //  height: unset;
-  //}
+    a:hover::after {
+      width: 0;
+    }
+  }
 
   .hamburger { // on top for avoid wrong icon hamburger
     margin-top: 0.5rem;
@@ -58,7 +58,7 @@
         height: 1.563rem;
         margin-top: 0.5rem;
 
-        &.linkTest {
+        &.mobileLinks {
           display: block;
           position: absolute;
           top: 35vh;

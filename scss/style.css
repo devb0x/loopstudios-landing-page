@@ -91,6 +91,9 @@ h1 {
     background-image: url("./../images/mobile/image-hero.jpg");
     height: 100vh;
   }
+  .hero a:hover::after {
+    width: 0;
+  }
 }
 .hero .hamburger {
   margin-top: 0.5rem;
@@ -127,7 +130,7 @@ h1 {
   height: 1.563rem;
   margin-top: 0.5rem;
 }
-.hero .header .navbar .header__links.linkTest {
+.hero .header .navbar .header__links.mobileLinks {
   display: block;
   position: absolute;
   top: 35vh;
@@ -165,11 +168,10 @@ h1 {
 
 .section {
   margin-top: 10rem;
-  height: 100vh;
+  height: 70vh;
 }
 @media (max-width: 66.2em) {
   .section {
-    height: 100vh;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -261,7 +263,7 @@ h1 {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  grid-row-gap: 24px;
+  grid-row-gap: 1.5rem;
   grid-template-areas: "title" "img" "img" "img" "img" "img" "img" "img" "img" "btn";
   text-align: center;
   justify-content: center;
@@ -270,13 +272,13 @@ h1 {
   .features {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr repeat(4, 3fr);
-    gap: 24px 24px;
+    gap: 1.5rem 1.5rem;
     grid-template-areas: "title btn" "img ." "img .";
   }
 }
 @media (min-width: 66.13em) {
   .features {
-    grid-template-columns: 250px 250px 250px 250px;
+    grid-template-columns: 15.938rem 15.938rem 15.938rem 15.938rem;
     grid-template-rows: 1fr repeat(2, 3fr);
     grid-template-areas: "title title title btn" "img img img img" "img img img img";
   }
@@ -297,6 +299,14 @@ h1 {
     justify-self: self-start;
   }
 }
+.features-title h3 {
+  display: grid;
+  grid-area: title;
+  text-transform: uppercase;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+}
 .features-btn {
   grid-area: btn;
   align-self: center;
@@ -314,12 +324,17 @@ h1 {
   text-transform: uppercase;
   color: black;
   background-color: white;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
-  letter-spacing: 5px;
+  letter-spacing: 0.313rem;
   font-family: "Alata", sans-serif;
-  margin: 10px auto;
-  padding: 13px 38px;
+  margin: 0.625rem auto;
+  padding: 0.813rem 2.375rem;
+  transition: all 400ms ease-in-out;
+}
+.features-btn > button:hover {
+  background-color: black;
+  color: white;
 }
 @media (min-width: 41.625em) {
   .features-btn {
@@ -327,51 +342,61 @@ h1 {
   }
 }
 
-h3 {
-  display: grid;
-  grid-area: title;
-  text-transform: uppercase;
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 32px;
-  font-weight: 300;
+.feature a::after {
+  content: unset;
 }
-
 .feature__item {
-  height: 120px;
+  height: 7.5rem;
   width: 100%;
   margin: auto;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  box-shadow: inset 6.25rem 0 4.688rem 0.313rem rgba(0, 0, 0, 0.5);
+  transition: box-shadow 200ms ease-in-out;
+}
+.feature__item:hover {
+  box-shadow: inset 0 0 30rem 0 #d8d8d8;
+}
+.feature__item:hover .feature__title {
+  color: black;
 }
 @media (min-width: 41.625em) {
   .feature__item {
-    height: 450px;
-    width: 256px;
+    height: 28.125rem;
+    width: 16rem;
     background-size: contain;
     background-position: top;
+    box-shadow: inset 0 -14.063rem 18.75rem -7.188rem black;
   }
 }
 .feature__img {
-  height: 100%;
-  width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   position: relative;
 }
 .feature__img .feature__title {
+  max-width: 15rem;
   font-size: 1.5rem;
   font-family: "Josefin Sans", sans-serif;
   text-transform: uppercase;
   text-align: left;
   color: white;
-  position: absolute;
-  left: 10%;
-  bottom: 5%;
-  max-width: 240px;
-  height: 50%;
-  white-space: pre;
+  position: relative;
+  display: flex;
+  margin: 3.438rem 6%;
+  line-height: 1;
+}
+@media (min-width: 41.625em) {
+  .feature__img .feature__title {
+    left: 0;
+    bottom: 0;
+    position: unset;
+    margin-left: 2.5rem;
+    margin-top: 21.875rem;
+    font-size: 2rem;
+  }
 }
 
 #item1 {
