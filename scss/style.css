@@ -305,9 +305,14 @@ h1 {
   display: grid;
   grid-area: title;
   text-transform: uppercase;
-  font-size: 3rem;
+  font-size: 2rem;
   font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
+}
+@media (min-width: 66.13em) {
+  .features-title h3 {
+    font-size: 3rem;
+  }
 }
 .features-btn {
   grid-area: btn;
