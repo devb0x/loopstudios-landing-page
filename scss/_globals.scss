@@ -25,18 +25,20 @@ a, a:visited, a:hover {
   color: $white;
 }
 
-a::after {
-  content: '';
-  display: block;
-  margin: 0.625rem auto;
-  background: white;
-  height: 2px;
-  width: 0;
-  transition: all 0.3s ease-in-out;
-}
+.border-link {
+  a::after {
+      content: '';
+      display: block;
+      margin: 0.625rem auto;
+      background: white;
+      height: 2px;
+      width: 0;
+      transition: all 0.3s ease-in-out;
+    }
 
-a:hover::after {
-  width: 40%;
+    a:hover::after {
+      width: 40%;
+    }
 }
 
 // Flexbox
@@ -53,6 +55,10 @@ a:hover::after {
 
   &-ai-c {
     align-items: center;
+  }
+
+  &-fd-c {
+    flex-direction: column;
   }
 }
 
